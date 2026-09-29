@@ -7,9 +7,25 @@ Use node 26.10.0, and the 22.2.0 Angular cli version.
 # Usage
 
     - Clone the repo
-    - Docker compose up. The node modules will be installed in the image, and the web will be served in the port 4200.
+    - You have two branches:
+        * main: example of a form, routes and router outlet.
+        * initial-state: nothing of the above.
+    - Set the branch you want to work on.
+    - Execute: 
+        
+            docker compose up
+        
+        The node modules will be installed in the image, and the web will be served in the port 4200.
+    
+    - Before to change of branch you have to stop the containter
+
+            docker compose stop
+
     - Code your web.
     - Build your web: while the web is being served in the port 4200 (http://localhost:4200), that is, the container is running, get into the container and write: ng build. Your web will be made and stored in the volume ./web/dist/browser
+
+
+    
 
 # Reinstall or update the node modules
 
