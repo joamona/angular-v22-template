@@ -1,0 +1,26 @@
+services:
+  angular:
+    env_file:
+      - .env
+    build:
+      context: ./web
+    restart: "no"
+    ports:
+      - 127.0.0.1:4200:4200
+    # Modificamos el comando para asegurar el install antes de arrancar
+    command: >
+      sh -c "npm install && ng serve --host 0.0.0.0 --port 4200 --poll=1000"
+    volumes: 
+      - ./web:/usr/src/web
+
+      # Este truco crea un espacio aislado 
+      # en Docker para node_modules. Digamos que aunque node_modules
+      # No se debe sincronizar con el host, ya que som miles de archivos y se bloquea
+      # No hacer esto: - /web/node_modules:/usr/src/web/node_modules
+      # está dentro de web no va a sincronizarse con el host,
+      # y no se va a ver desde el hosr
+      # pero es persistente entre contenedores, así que si borramos el contenedor y lo volvemos a crear, node_modules sigue ahí
+      # node_modules existe.
+      - /usr/src/web/node_modules
+
+

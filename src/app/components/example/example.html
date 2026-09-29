@@ -1,0 +1,37 @@
+<p>example works!</p>
+
+
+
+
+<div class="container">
+    <div class="center">
+
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Number 1</mat-label>
+                <input matInput placeholder="Number 1 to sum" [(ngModel)]="number1" name="number1">
+            </mat-form-field>
+
+            <br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Number 2</mat-label>
+                <input matInput placeholder="Number 2 to sum" [(ngModel)]="number2" name="number2">
+            </mat-form-field>
+
+            <br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Number 3</mat-label>
+                <input matInput placeholder="Sum" disabled [(ngModel)]="result" name="result">
+            </mat-form-field>
+            <div class="center">
+                <button matButton="elevated" (click)="showMessage()">Basic</button>
+                <button matButton="elevated" disabled>Disabled</button>
+                <a matButton="elevated" href="https://www.google.com/" target="_blank">Link</a>
+
+            </div>
+  
+
+        </form>
+
+    </div><!-- center -->
+</div><!-- container -->
