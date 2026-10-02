@@ -31,7 +31,9 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/ol/ol.css",
+              "node_modules/ol-layerswitcher/dist/ol-layerswitcher.css"
             ]
           },
           "configurations": {
